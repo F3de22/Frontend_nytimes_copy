@@ -64,6 +64,7 @@ a{
 button{
     cursor: pointer;
     border: none;
+    background: transparent;
 }
 
 figcaption{
@@ -89,9 +90,9 @@ figcaption{
 
 #search{
     border:none;
-    background-color:#0000;
-    padding-right: 15px;
+    margin-right: 15px;
     cursor: pointer;
+    background-color: transparent;
 }
 
 #search-bar{
@@ -134,11 +135,11 @@ figcaption{
 }
 
 .top-button{
-    background-color: cornflowerblue;
+    background-color: #336699;
     color: white;
-    border-radius: 2px;
-    font-size: 14px;
-    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 7px 15px;
     margin-left: 15px;
     cursor: pointer;
 }
@@ -231,7 +232,7 @@ figcaption{
     display: inline;
 }
 
-.vertical-line{
+#vertical-line{
     border-right: 1px solid darkgray;
     display: flex;
     flex-direction: column;
@@ -246,6 +247,7 @@ figcaption{
 .main_column{
     display: flex;
     flex-direction: column;
+    border-top: 1.5px solid black;
 }
 
 a .article_title:hover{
@@ -321,7 +323,7 @@ a .article_title:hover{
 .bottom-articles{
     display:grid;
     margin:0;
-    grid-template-columns:auto 1px auto;
+    grid-template-columns:50% 1px 50%;
     column-gap: 15px;
     max-width: 100%;
     border-top: 1.5px solid lightgrey;
@@ -444,9 +446,10 @@ a .article_title:hover{
 
 .second-part{
     display:grid;
-    grid-template-columns: auto 1px auto;
+    grid-template-columns: 50% 1px 50%;
     column-gap: 15px;
     max-width: 100%;
+    margin-top:15px;
 }
 
 #video{
@@ -461,4 +464,10 @@ a .article_title:hover{
 
 .vid{
     display:inline-block;
+}
+
+.article_title2{
+    font-size: 1.375rem;
+    font-weight: 500;
+    margin: 5px 0;
 }
