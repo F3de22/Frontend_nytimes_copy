@@ -21,9 +21,6 @@ main{
     display: block;
 }
 
-header, footer, aside, nav, article {
-    display: block;
-}
 
 header {
     max-width: 1225px;
@@ -31,11 +28,12 @@ header {
     position: absolute;
     top: 0;
     z-index:500;
+    border-bottom: 1.5px solid black;
 }
 
 h1{
     font-family: chomsky, sans-serif;
-    margin-top: 35px;
+    margin-top: 45px;
     margin-bottom: 5px;
     text-align: center;
     font-size:70px;
@@ -81,31 +79,28 @@ figcaption{
 #nav-search{
     position: absolute;
     left:5px;
-    top:5px;
+    top:0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
+    z-index:999;
 }
 
 #search{
     border:none;
-    margin-right: 15px;
+    margin: 5px 15px 0 0;
     cursor: pointer;
     background-color: transparent;
 }
 
+#search_navigation{
+    display: none;
+}
+
 #search-bar{
     height: 30px;
-    visibility: hidden;
-}
-
-#search:active #search-bar #go{
-    visibility: visible;
-}
-
-#search:hover {
-    background-color: lightgray;
+    margin-top: 0;
 }
 
 #go{
@@ -117,16 +112,40 @@ figcaption{
     padding: 5px 12px;
     margin-left: 10px;
     height: 35px;
-    visibility: hidden;
+}
+
+.nation{
+    right:33%;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:10px;
+    z-index:1;
+}
+
+.nation_name {
+    font-size:0.7rem;
+    display: inline-block;
+    cursor: pointer;
+    padding-right: 15px;
+    top:0;
 }
 
 #today{
+    font-size:0.8rem;
+    margin-top:30px;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
     position: absolute;
     left:10px;
     top:35px
 }
 
 #buttons{
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     position: absolute;
@@ -141,74 +160,56 @@ figcaption{
     font-size: 12px;
     padding: 7px 15px;
     margin-left: 15px;
-    cursor: pointer;
+    border: 1px solid midnightblue;
 }
 
-.column{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-}
 
-.column a:hover{
-    text-decoration: lightgray;
-}
-
-.column-title{
-    font-weight: bold;
-    color:grey;
-}
-
-.column ul{
-    margin:0 0 0 15px;
-    padding:0;
-
-}
-#dropdown-menu a:hover {
-    color: black;
+.navbar a:hover{
     text-decoration: underline;
 }
 
-#dropdown-menu{
-    background-color: red;
-    position: sticky;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1.5px solid black;
+.dropdown-menu{
+    font-size: 0.8rem;
+    left:0;
+    border:none;
+    text-align:center;
+    position: absolute;
+    border-radius: 0;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    visibility: hidden;
+    min-width: 100%;
+    z-index: 999;
+}
+
+.dropdown:hover .dropdown-menu{
+    visibility: visible;
+}
+
+.dropdown-menu.show{
+    display:flex;
+}
+
+.dropdown-menu a:hover{
+    color:darkgrey;
+    text-decoration: none;
+}
+
+.dropdown-menu li:first-child a{
+    color:darkgrey;
+    padding:20px 0;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 #line{
-    padding-top:1.5px;
     border-bottom: 1.5px solid black;
-}
-
-.dropdown{
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    padding-right: 15px;
-}
-
-.submenu{
-    background-color: blue;
-    left:0;
-    text-align:center;
-    position: absolute;
-    width: 100%;
-    line-height: 30px;
-    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-    visibility: hidden;
-    border-top: 1px solid #ebebeb;
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    z-index:999;
-}
-
-.dropdown:hover .submenu{
-    position: fixed;
-    display: compact;
-    visibility: visible;
+    margin-bottom: 2px;
 }
 
 .down-arrow{
@@ -217,7 +218,7 @@ figcaption{
 
 #live-section{
     text-align: center;
-    padding-top:10px;
+    padding:35px 0 15px 0;
     font-size: 12px;
 }
 
@@ -240,7 +241,7 @@ figcaption{
 
 .two_column{
     display:grid;
-    grid-template-columns: 70% 1px 30%;
+    grid-template-columns: 69% 1px 28.5%;
     column-gap: 15px;
   }
 
@@ -248,6 +249,7 @@ figcaption{
     display: flex;
     flex-direction: column;
     border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
 }
 
 a .article_title:hover{
@@ -262,6 +264,7 @@ a .article_title:hover{
     font-size: 1.375rem;
     font-weight: 700;
     margin: 5px 0;
+    max-width: 100%;
 }
 
 .article_description{
@@ -289,8 +292,13 @@ a .article_title:hover{
     position:relative;
 }
 
+.articles_list{
+    display: grid;
+    grid-template-columns: 35% 65%;
+    column-gap: 20px;
+}
+
 .content{
-    max-width:35%;
     padding-bottom: 10px;
 }
 
@@ -304,15 +312,15 @@ a .article_title:hover{
     margin: 0 0 10px 0;
 }
 
-.sliding_image{
+#carouselExampleCaptions{
+    max-width: 60%;
     position: absolute;
     top: 10px;
     right:0;
 }
 
 .sliding_image img{
-    max-width: 525px;
-    max-height: 350px;
+    height:100%;
     width:100%;
 }
 
@@ -361,6 +369,7 @@ a .article_title:hover{
     font-size: 0.625rem;
     margin: 0 0 10px 0;
     text-align:left;
+    color:darkgrey;
 }
 
 #second-live{
@@ -396,6 +405,7 @@ a .article_title:hover{
     font-size: 0.625rem;
     margin: 0 0 10px 0;
     text-align:left;
+    color:darkgrey;
 }
 
 .content-small img{
@@ -428,7 +438,7 @@ a .article_title:hover{
     display:inline-block;
     text-align: center;
     width:10px;
-    padding:5px 0 0 2px;
+    padding:0 0 5px 2px;
 }
 
 .content-small:hover .circle{
@@ -450,9 +460,11 @@ a .article_title:hover{
     column-gap: 15px;
     max-width: 100%;
     margin-top:15px;
+    padding-bottom:15px;
 }
 
 #video{
+    padding-top: 10px;
     margin-left: 2rem;
     position:relative;
     max-width: 370px;
@@ -470,4 +482,59 @@ a .article_title:hover{
     font-size: 1.375rem;
     font-weight: 500;
     margin: 5px 0;
+}
+
+.image img{
+    max-width: 100%;
+}
+
+#art-min{
+    border-top: 1.5px solid lightgray;
+    margin-top: 10px;
+}
+
+video{
+    background-image: linear-gradient(transparent, transparent) !important;
+}
+
+.name{
+    color: #5A5A5A;
+    font-size: 0.625rem;
+    text-align:left;
+    font-weight: 700;
+    margin:10px 0 0 0;
+}
+
+.comment{
+    font-size: 1rem;
+    font-weight: bold;
+    margin:0;
+}
+
+.comment-section{
+    display:grid;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+    border-bottom: 1.5px solid lightgray;
+}
+
+.circular img{
+    border-radius: 50%;
+    width: 50px;
+    right:0;
+}
+
+.comment-section2{
+    display:grid;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+    border-bottom: 1.5px solid lightgray;
+}
+
+.square_img img{
+    margin-bottom: 20px;
+}
+
+#final{
+    border:none;
 }
