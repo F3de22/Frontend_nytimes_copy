@@ -3,10 +3,15 @@
     src: url(fonts/Chomsky.otf)
 }
 
-body{
+html{
     max-width: 1225px;
-    width: 100%;
-    margin: 0 auto;
+    width:100%;
+    margin:0 auto;
+    padding:0;
+    border:0;
+}
+
+body{
     font-family: nyt-franklin,sans-serif;
     font-size: 14px;
     display:flex;
@@ -15,20 +20,18 @@ body{
 }
 
 main{
-    max-width: 1225px;
-    width: 100%;
-    margin: 0 auto;
     display: block;
 }
 
 
 header {
-    max-width: 1225px;
-    width: 100%;
+    max-width:100%;
+    width:1225px;
     position: absolute;
     top: 0;
     z-index:500;
     border-bottom: 1.5px solid black;
+    margin:auto;
 }
 
 h1{
@@ -158,14 +161,21 @@ figcaption{
     color: white;
     border-radius: 4px;
     font-size: 12px;
-    padding: 7px 15px;
+    padding: 5px 15px;
     margin-left: 15px;
     border: 1px solid midnightblue;
 }
 
+.navbar-expand-lg{
+    justify-content: center;
+}
 
 .navbar a:hover{
     text-decoration: underline;
+}
+
+.dropdown{
+    max-width: 1225px;
 }
 
 .dropdown-menu{
@@ -179,7 +189,6 @@ figcaption{
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     visibility: hidden;
-    min-width: 100%;
     z-index: 999;
 }
 
@@ -191,20 +200,15 @@ figcaption{
     display:flex;
 }
 
-.dropdown-menu a:hover{
+.dropdown a:hover{
     color:darkgrey;
     text-decoration: none;
+    background-color: white;
 }
 
 .dropdown-menu li:first-child a{
     color:darkgrey;
     padding:20px 0;
-}
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
 }
 
 #line{
@@ -317,11 +321,6 @@ a .article_title:hover{
     position: absolute;
     top: 10px;
     right:0;
-}
-
-.sliding_image img{
-    height:100%;
-    width:100%;
 }
 
 .left-articles{
@@ -537,4 +536,39 @@ video{
 
 #final{
     border:none;
+}
+
+@media screen and (max-width: 1070px){
+    body{
+        max-width: 1070px;
+        width:100%;
+        margin-left:15px;
+    }
+
+    .main_column{
+        display:block;
+    }
+
+    .navbar{
+        max-width:1070px;
+    }
+
+    .two_column{
+        grid-template-columns: 1fr;
+    }
+
+    #first_column{
+        display: flex;
+        width:100%;
+        max-width:1070px;
+    }
+
+    #second_column{
+        display:none;
+    }
+
+    #vertical-line{
+        display: none;
+    }
+
 }
