@@ -4,11 +4,12 @@
 }
 
 html{
+    margin: 0 auto;
     max-width: 1225px;
     width:100%;
-    margin:0 auto;
     padding:0;
     border:0;
+    box-sizing: border-box;
 }
 
 body{
@@ -31,7 +32,11 @@ header {
     top: 0;
     z-index:500;
     border-bottom: 1.5px solid black;
-    margin:auto;
+    margin:0;
+}
+
+#second-header{
+    display:none;
 }
 
 h1{
@@ -74,12 +79,12 @@ figcaption{
     color:darkgray;
 }
 
-#titolo{
+.title{
     color:black;
     text-decoration: none;
 }
 
-#nav-search{
+.nav-search{
     position: absolute;
     left:5px;
     top:0;
@@ -90,7 +95,7 @@ figcaption{
     z-index:999;
 }
 
-#search{
+.search{
     border:none;
     margin: 5px 15px 0 0;
     cursor: pointer;
@@ -106,7 +111,7 @@ figcaption{
     margin-top: 0;
 }
 
-#go{
+.go{
     background-color: cadetblue;
     color: white;
     border: none;
@@ -135,7 +140,7 @@ figcaption{
     top:0;
 }
 
-#today{
+.today{
     font-size:0.8rem;
     margin-top:30px;
     display:flex;
@@ -147,7 +152,7 @@ figcaption{
     top:35px
 }
 
-#buttons{
+.buttons{
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -166,21 +171,24 @@ figcaption{
     border: 1px solid midnightblue;
 }
 
-.navbar-expand-lg{
-    justify-content: center;
+.navbar{
+    background-color: white;
+}
+
+.navbar-nav {
+    max-width: 950px;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .navbar a:hover{
     text-decoration: underline;
 }
 
-.dropdown{
-    max-width: 1225px;
-}
-
 .dropdown-menu{
     font-size: 0.8rem;
-    left:0;
     border:none;
     text-align:center;
     position: absolute;
@@ -189,7 +197,13 @@ figcaption{
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     visibility: hidden;
+    width:1225px;
     z-index: 999;
+}
+
+#navbarSupportedContent{
+    display:flex;
+    justify-content: space-around;
 }
 
 .dropdown:hover .dropdown-menu{
@@ -492,10 +506,6 @@ a .article_title:hover{
     margin-top: 10px;
 }
 
-video{
-    background-image: linear-gradient(transparent, transparent) !important;
-}
-
 .name{
     color: #5A5A5A;
     font-size: 0.625rem;
@@ -542,7 +552,6 @@ video{
     body{
         max-width: 1070px;
         width:100%;
-        margin-left:15px;
     }
 
     .main_column{
@@ -570,5 +579,120 @@ video{
     #vertical-line{
         display: none;
     }
+
+}
+
+@media screen and (max-width: 991px){
+
+    html{
+        width:95%;
+    }
+
+    #first-header{
+        display:none;
+    }
+
+    #second-header{
+        display:flex;
+        max-width: 95%;
+        height: fit-content;
+        position: absolute;
+        top: 0;
+        z-index:500;
+        border-bottom: 1.5px solid lightgrey;
+        margin:auto;
+    }
+
+    h1{
+        font-size: 38px;
+        margin: 0;
+        display: inline-block;
+        text-align: center;
+        top:0;
+    }
+
+    .top-button{
+        display: inline-block;
+        background-color: white;
+        border: none;
+    }
+
+    #top{
+        width:100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top:10px;
+    }
+
+    body{
+        padding:0;
+        height:100%;
+    }
+
+    main{
+        margin-top: 40px;
+    }
+
+    #live-section{
+        padding:0;
+        margin:70px 0 15px 0;
+    }
+
+    .today{
+        font-weight: 700;
+        font-size:12px;
+        width:100%;
+        left:0;
+        display: flex;
+        justify-content: space-around;
+        margin-top:30px;
+        padding-bottom: 10px;
+        border-bottom: 1.5px solid lightgrey;
+    }
+
+    .today a{
+        position: absolute;
+        right:10px;
+        font-weight: 100;
+        font-size: 10px;
+        color:darkblue;
+    }
+
+    .navbar{
+        left:10px;
+    }
+
+    .navbar-toggler-icon{
+        width:20px;
+        height:20px;
+    }
+
+    #data2{
+        width:100%;
+        text-align: center;
+
+    }
+
+    .buttons{
+        margin-top:5px;
+    }
+}
+
+@media screen and (max-width: 739px){
+    .today{
+        justify-content: space-between;
+    }
+
+    #data2{
+        text-align: center;
+        width: fit-content;
+    }
+
+    #live-section{
+        margin: 60px 0 5px 0;
+    }
+}
+
+@media screen and (max-width: 599px){
 
 }
