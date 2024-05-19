@@ -35,13 +35,15 @@ function cancel(event){
 function handleScroll() {
     if (window.scrollY > 190) {
         document.getElementById('navbar_top').classList.add('fixed-top');
+        document.getElementById('navbar_top').style.boxShadow="0 0 5px 1px rgba(0, 0, 0, 0.28)";
     } else {
         document.getElementById('navbar_top').classList.remove('fixed-top');
+        document.getElementById('navbar_top').style.boxShadow="none";
         document.body.style.paddingTop = 170 + 'px';
     }
 }
 function checkScreenWidth() {
-    if (window.matchMedia('(min-width: 1070px)').matches) {
+    if (window.matchMedia('(min-width: 991px)').matches) {
         window.addEventListener('scroll', handleScroll);
     } else {
         window.removeEventListener('scroll', handleScroll);

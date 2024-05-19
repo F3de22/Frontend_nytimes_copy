@@ -6,7 +6,7 @@
 html{
     margin: 0 auto;
     max-width: 1225px;
-    width:100%;
+    width:95%;
     padding:0;
     border:0;
     box-sizing: border-box;
@@ -197,7 +197,7 @@ figcaption{
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     visibility: hidden;
-    width:1225px;
+    width: 1225px;
     z-index: 999;
 }
 
@@ -476,6 +476,10 @@ a .article_title:hover{
     padding-bottom:15px;
 }
 
+#first_column2{
+    display:none;
+}
+
 #video{
     padding-top: 10px;
     margin-left: 2rem;
@@ -551,7 +555,8 @@ a .article_title:hover{
 @media screen and (max-width: 1070px){
     body{
         max-width: 1070px;
-        width:100%;
+        width:95%;
+        margin:auto;
     }
 
     .main_column{
@@ -586,6 +591,12 @@ a .article_title:hover{
 
     html{
         width:95%;
+    }
+
+    body{
+        max-width:991px;
+        width: 95%;
+        margin:0 auto;
     }
 
     #first-header{
@@ -679,6 +690,26 @@ a .article_title:hover{
 }
 
 @media screen and (max-width: 739px){
+    body{
+        max-width: 739px;
+        width: 95%;
+        margin:0 auto;
+
+    }
+
+    #first_column{
+        display:none
+    }
+
+    #carouselExampleCaptions{
+        max-width: 100%;
+        position: relative;
+        right:0;
+        padding-bottom: 10px;
+        border-bottom: 1.5px solid lightgrey;
+        margin-bottom:10px;
+    }
+
     .today{
         justify-content: space-between;
     }
@@ -688,11 +719,18 @@ a .article_title:hover{
         width: fit-content;
     }
 
-    #live-section{
-        margin: 60px 0 5px 0;
+    .updates{
+        margin-bottom: 8px;
     }
-}
 
-@media screen and (max-width: 599px){
+    #live-section{
+        margin: 70px 0 15px 0;
+        font-size:0.8rem;
+    }
 
+    #first_column2{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
