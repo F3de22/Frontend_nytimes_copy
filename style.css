@@ -612,6 +612,27 @@ h6{
     padding-right:10px;
 }
 
+footer{
+    display:flex;
+    flex: 1;
+    position: absolute;
+    margin-top: 50px;
+    bottom: 0;
+}
+
+footer a{
+    color: dimgrey;
+    font-size: 12px;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+#first-line-foot{
+    display: inline-block;
+}
+
 
 
 @media screen and (max-width: 1070px){
