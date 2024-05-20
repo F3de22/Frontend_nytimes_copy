@@ -564,6 +564,7 @@ a .article_title:hover{
 .footer-menu{
     border-top: 1.5px solid lightgray;
     border-bottom: 1.5px solid lightgray;
+    margin-bottom:40px;
 }
 
 .titolo-fin{
@@ -608,7 +609,7 @@ h6{
 
 #bold p{
     font-weight: 900;
-    font-size: 17px;
+    font-size: 1.1rem;
     line-height:10px;
 }
 
@@ -618,31 +619,36 @@ h6{
 
 footer{
     position: absolute;
-    margin-top: 50px;
+    margin-top: 150px;
     width:100%;
     height:30px;
     bottom:0;
 
 }
 
-#footer{
-
-}
-
 footer a{
     color: dimgrey;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 footer a:hover{
     text-decoration: underline;
 }
 
-#first-line-foot{
+#first-line-foot li{
     display: inline;
 }
 
+#first-line-foot{
+    display:flex;
+    text-align: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
 
+#manage{
+    text-align: center;
+}
 
 @media screen and (max-width: 1070px){
     body{
