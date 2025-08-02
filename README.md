@@ -1,4 +1,4 @@
-# PPM_Elaborato_Frontend
+# Frontend_nytimes_copy
  Project for UNIFI Front-End Web developement exam
 ## Intriduction
 This Project is developed in HTML, CSS and JavaScript.<br>
